@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Доступная форма регистрации</title>
+  </head>
+  <body>
+    <form role="main">
+      <fieldset>
+        <legend><h1>Форма регистрации</h1></legend>
+        <label for="name">Имя:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          autocomplete="name"
+          oninput="validateName()"
+        />
+        <span id="name-error" class="error-message"></span>
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+          oninput="validateEmail()"
+        />
+        <span id="email-error" class="error-message"></span>
+
+        <label for="password">Пароль:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          minlength="8"
+          required
+        />
+        <span class="password-hint">(Пароль должен содержать 8 символов)</span>
+
+        <label for="password-repeat">Повторите пароль:</label>
+        <input
+          type="password"
+          id="password-repeat"
+          name="password-repeat"
+          required
+          aria-describedby="password-repeat-error"
+        />
+        <span id="password-repeat-error" class="error-message"></span>
+
+        <button type="submit" aria-label="Зарегистрироваться">
+          Зарегистрироваться
+        </button>
+      </fieldset>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
